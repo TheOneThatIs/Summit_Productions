@@ -17,4 +17,5 @@ namespace summit {
 
 		sf::Vector2f getPos() { return pos; }
 	};
+
 }
