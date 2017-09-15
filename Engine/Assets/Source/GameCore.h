@@ -1,10 +1,9 @@
 #pragma once
-#include<SFML\Graphics.hpp>
 #include"System\Window.h"
+#include"Math\Point.h"
 
 
-
-namespace summit {
+namespace sp {
 	class GameCore {
 		Window *window;
 		sf::Clock timer;
@@ -14,7 +13,7 @@ namespace summit {
 		int updateCount;
 		float fps;
 		float ups;
-		sf::Vector2f mousePos;
+		sp::Point mousePos;
 
 	public:
 		GameCore();
@@ -32,7 +31,7 @@ namespace summit {
 		void printUPS();
 
 		void updateCursorPos(sf::Event &event);
-		sf::Vector2f getMousePos();
+		sp::Point getMousePos();
 
 		float getAccumulator();
 

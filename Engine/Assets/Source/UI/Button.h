@@ -1,20 +1,37 @@
 #pragma once
 
-#include "UI.h"
+#include "GUI.h"
 #include"..\Graphics\Image.h"
 
 #include<string>
 #include<SFML\Graphics.hpp>
-#include<functional>
 
-namespace summit {
+
+
+namespace sp {
+	class Button : public GUI {
+	public:
+		enum ButtonState {
+			NORMAL, HOVER, CLICKED
+		}state;
+
+		Button();
+	};
+}
+
+
+
+
+
+
+/*namespace sp {
 	class Button : public UI {
 		enum ButtonState{
 			NORMAL, HOVER, CLICKED
 		}state;
 
-		summit::Image normal, hover, clicked;
-		summit::Image *currentStateImage;
+		sp::Image normal, hover, clicked;
+		sp::Image *currentStateImage;
 		float width, height, left, top;
 		bool buttonDown;
 
@@ -31,4 +48,4 @@ namespace summit {
 	private:
 		bool handleEvents(sf::Event &event, sf::Vector2f mousePos);
 	};
-}
+}*/

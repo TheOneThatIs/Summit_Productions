@@ -2,24 +2,25 @@
 
 
 
-namespace summit {
+namespace sp {
 	
 	Image::Image() {}
 
-	Image::Image(std::string filePath, sf::Vector2f pos){
+	Image::Image(std::string filePath, sp::Point pos){
 		texture.loadFromFile(filePath);
 		sprite.setTexture(texture);
 		setPosition(pos);
 	}
 
 
-	void Image::init(std::string filePath, sf::Vector2f pos) {
-		texture.loadFromFile(filePath);
+	void Image::init(std::string filePath, sp::Point pos) {
+		if(!texture.loadFromFile(filePath))
+			std::cout << "Error loading file \"" << filePath << "\"" << std::endl;
 		sprite.setTexture(texture);
 		setPosition(pos);
 	}
 
-	void Image::init(std::string filePath, sf::Vector2f pos, sf::IntRect crop) {
+	void Image::init(std::string filePath, sp::Point pos, sf::IntRect crop) {
 		texture.loadFromFile(filePath);
 		sprite.setTexture(texture);
 		sprite.setTextureRect(crop);
@@ -30,10 +31,9 @@ namespace summit {
 		sprite.scale(sf::Vector2f(factorX, factorY));
 	}
 
-	void Image::setPosition(sf::Vector2f pos) {
+	void Image::setPosition(sp::Point pos) {
 		this->pos = pos;
-		sprite.setPosition(pos);
-		
+		sprite.setPosition(sf::Vector2f(pos.x, pos.y));
 	}
 
 	sf::Sprite* Image::getSprite() { return &sprite; }

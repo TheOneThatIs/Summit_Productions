@@ -2,9 +2,10 @@
 
 #include<string>
 #include<SFML\Graphics.hpp>
+#include"..\Graphics\Camera.h"
 
 
-namespace summit{
+namespace sp{
 
 class Window {
 	sf::RenderWindow renderWindow;
@@ -27,6 +28,8 @@ public:
 	
 	void setKeyRepeatEnabled(bool enabled);
 
+	void setCam(Camera cam);
+
 	void setDimensions(int width, int height);
 	
 	/*
@@ -38,6 +41,7 @@ public:
 	bool isOpen();
 	int getWidth();
 	int getHeight();
+	sf::View getDefaultView();
 
 	void close();
 };

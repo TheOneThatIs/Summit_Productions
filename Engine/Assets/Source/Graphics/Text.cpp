@@ -1,6 +1,6 @@
 #include"Text.h"
 
-namespace summit {
+namespace sp {
 	Text::Text(){}
 	Text::Text(string text, string fontName) {
 	

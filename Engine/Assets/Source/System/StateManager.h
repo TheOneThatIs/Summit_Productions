@@ -4,7 +4,9 @@
 #include"State.h"
 #include"Window.h"
 
-namespace summit{
+
+
+namespace sp{
 	class StateManager {
 		std::vector<State*> stateStack;
 

@@ -9,7 +9,7 @@
 #include<algorithm>
 
 
-namespace summit {
+namespace sp {
 
 	GameCore::GameCore() {
 		mousePos = { 0, 0 };
@@ -92,7 +92,7 @@ namespace summit {
 		mousePos.x = (float)event.mouseMove.x;
 		mousePos.y = (float)event.mouseMove.y;
 	}
-	sf::Vector2f GameCore::getMousePos() {
+	sp::Point GameCore::getMousePos() {
 		return mousePos;
 	}
 

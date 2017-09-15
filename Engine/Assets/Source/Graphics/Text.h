@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace summit {
+namespace sp {
 
 	class Text {
 		int size, x, y;

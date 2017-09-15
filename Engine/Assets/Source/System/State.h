@@ -3,7 +3,7 @@
 #include<SFML\Graphics.hpp>
 #include"Window.h"
 
-namespace summit {
+namespace sp {
 	class State {
 	protected:
 		bool isPaused;

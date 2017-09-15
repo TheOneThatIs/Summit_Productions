@@ -5,7 +5,7 @@
 #include<SFML\Graphics.hpp>
 
 
-namespace summit {
+namespace sp {
 	class Animation {
 		sf::Sprite spritesheet;
 

@@ -5,7 +5,7 @@
 #include"..\System\Window.h"
 
 
-namespace summit {
+namespace sp {
 
 class Cutscene {
 	int numFrames;
@@ -25,7 +25,7 @@ public:
 	void restart();
 
 	void update(float deltaTime);
-	void draw(summit::Window *window);
+	void draw(sp::Window *window);
 
 	bool isPaused();
 

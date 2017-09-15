@@ -2,9 +2,15 @@
 
 #include<iostream>
 
-extern sf::Vector2f mousePos;
 
-namespace summit {
+namespace sp {
+	Button::Button() {}
+}
+
+
+
+
+/*namespace sp {
 	Button::Button() {
 		currentStateImage = &normal;
 		buttonDown = false;
@@ -22,9 +28,6 @@ namespace summit {
 	}
 
 	void Button::init(std::string filePath, sf::Vector2f pos, sf::IntRect intRectNormal, sf::IntRect intRectHover, sf::IntRect intRectClicked) {
-		
-		
-		
 		//normal.getTexture()->loadFromFile(filePath, intRectNormal);
 		//hover.getTexture()->loadFromFile(filePath, intRectHover);
 		//clicked.getTexture()->loadFromFile(filePath, intRectClicked);
@@ -80,4 +83,4 @@ namespace summit {
 	void Button::draw(sf::RenderWindow *window) {
 		currentStateImage->draw(window);
 	}
-}
+}*/

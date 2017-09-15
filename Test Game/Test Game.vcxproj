@@ -71,18 +71,32 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <LibraryPath>$(SolutionDir)Debug\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir);$(SolutionDir)Test Game\Source;$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(SolutionDir)Debug\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir);$(SolutionDir)Test Game\Source;$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>$(SolutionDir)Debug\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir);$(SolutionDir)Test Game\Source;$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>$(SolutionDir)Debug\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir);$(SolutionDir)Test Game\Source;$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>P:\Projects\My Programs\Summit Productions Template;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>Engine.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -90,8 +104,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>P:\Projects\My Programs\Summit Productions Template;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -100,11 +117,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>P:\Projects\My Programs\Summit Productions Template;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -114,16 +132,20 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>P:\Projects\My Programs\Summit Productions Template;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Inc\TestGame.cpp" />
-    <ClCompile Include="Source\Src\main.cpp" />
+    <ClCompile Include="Source\Blocks\Dirt.cpp" />
+    <ClCompile Include="Source\Blocks\Stone.cpp" />
+    <ClCompile Include="Source\Entities\Player.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\TestGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
@@ -131,7 +153,137 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Inc\TestGame.h" />
+    <ClInclude Include="Source\Blocks\Dirt.h" />
+    <ClInclude Include="Source\Blocks\Stone.h" />
+    <ClInclude Include="Source\Entities\Player.h" />
+    <ClInclude Include="Source\TestGame.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cutscenes\Intro\0000-0085.avi" />
+    <None Include="Resources\Maps\Test World 1.csv" />
+    <None Include="Resources\Saves\TestFile.sav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Cutscenes\Intro\0.png" />
+    <Image Include="Resources\Cutscenes\Intro\1.png" />
+    <Image Include="Resources\Cutscenes\Intro\10.png" />
+    <Image Include="Resources\Cutscenes\Intro\11.png" />
+    <Image Include="Resources\Cutscenes\Intro\12.png" />
+    <Image Include="Resources\Cutscenes\Intro\13.png" />
+    <Image Include="Resources\Cutscenes\Intro\14.png" />
+    <Image Include="Resources\Cutscenes\Intro\15.png" />
+    <Image Include="Resources\Cutscenes\Intro\16.png" />
+    <Image Include="Resources\Cutscenes\Intro\17.png" />
+    <Image Include="Resources\Cutscenes\Intro\18.png" />
+    <Image Include="Resources\Cutscenes\Intro\19.png" />
+    <Image Include="Resources\Cutscenes\Intro\2.png" />
+    <Image Include="Resources\Cutscenes\Intro\20.png" />
+    <Image Include="Resources\Cutscenes\Intro\21.png" />
+    <Image Include="Resources\Cutscenes\Intro\22.png" />
+    <Image Include="Resources\Cutscenes\Intro\23.png" />
+    <Image Include="Resources\Cutscenes\Intro\24.png" />
+    <Image Include="Resources\Cutscenes\Intro\25.png" />
+    <Image Include="Resources\Cutscenes\Intro\26.png" />
+    <Image Include="Resources\Cutscenes\Intro\27.png" />
+    <Image Include="Resources\Cutscenes\Intro\28.png" />
+    <Image Include="Resources\Cutscenes\Intro\29.png" />
+    <Image Include="Resources\Cutscenes\Intro\3.png" />
+    <Image Include="Resources\Cutscenes\Intro\30.png" />
+    <Image Include="Resources\Cutscenes\Intro\31.png" />
+    <Image Include="Resources\Cutscenes\Intro\32.png" />
+    <Image Include="Resources\Cutscenes\Intro\33.png" />
+    <Image Include="Resources\Cutscenes\Intro\34.png" />
+    <Image Include="Resources\Cutscenes\Intro\35.png" />
+    <Image Include="Resources\Cutscenes\Intro\36.png" />
+    <Image Include="Resources\Cutscenes\Intro\37.png" />
+    <Image Include="Resources\Cutscenes\Intro\38.png" />
+    <Image Include="Resources\Cutscenes\Intro\39.png" />
+    <Image Include="Resources\Cutscenes\Intro\4.png" />
+    <Image Include="Resources\Cutscenes\Intro\40.png" />
+    <Image Include="Resources\Cutscenes\Intro\41.png" />
+    <Image Include="Resources\Cutscenes\Intro\42.png" />
+    <Image Include="Resources\Cutscenes\Intro\43.png" />
+    <Image Include="Resources\Cutscenes\Intro\44.png" />
+    <Image Include="Resources\Cutscenes\Intro\45.png" />
+    <Image Include="Resources\Cutscenes\Intro\46.png" />
+    <Image Include="Resources\Cutscenes\Intro\47.png" />
+    <Image Include="Resources\Cutscenes\Intro\48.png" />
+    <Image Include="Resources\Cutscenes\Intro\49.png" />
+    <Image Include="Resources\Cutscenes\Intro\5.png" />
+    <Image Include="Resources\Cutscenes\Intro\50.png" />
+    <Image Include="Resources\Cutscenes\Intro\51.png" />
+    <Image Include="Resources\Cutscenes\Intro\52.png" />
+    <Image Include="Resources\Cutscenes\Intro\53.png" />
+    <Image Include="Resources\Cutscenes\Intro\54.png" />
+    <Image Include="Resources\Cutscenes\Intro\55.png" />
+    <Image Include="Resources\Cutscenes\Intro\56.png" />
+    <Image Include="Resources\Cutscenes\Intro\57.png" />
+    <Image Include="Resources\Cutscenes\Intro\58.png" />
+    <Image Include="Resources\Cutscenes\Intro\59.png" />
+    <Image Include="Resources\Cutscenes\Intro\6.png" />
+    <Image Include="Resources\Cutscenes\Intro\60.png" />
+    <Image Include="Resources\Cutscenes\Intro\61.png" />
+    <Image Include="Resources\Cutscenes\Intro\62.png" />
+    <Image Include="Resources\Cutscenes\Intro\63.png" />
+    <Image Include="Resources\Cutscenes\Intro\64.png" />
+    <Image Include="Resources\Cutscenes\Intro\65.png" />
+    <Image Include="Resources\Cutscenes\Intro\66.png" />
+    <Image Include="Resources\Cutscenes\Intro\67.png" />
+    <Image Include="Resources\Cutscenes\Intro\68.png" />
+    <Image Include="Resources\Cutscenes\Intro\69.png" />
+    <Image Include="Resources\Cutscenes\Intro\7.png" />
+    <Image Include="Resources\Cutscenes\Intro\70.png" />
+    <Image Include="Resources\Cutscenes\Intro\71.png" />
+    <Image Include="Resources\Cutscenes\Intro\72.png" />
+    <Image Include="Resources\Cutscenes\Intro\73.png" />
+    <Image Include="Resources\Cutscenes\Intro\74.png" />
+    <Image Include="Resources\Cutscenes\Intro\75.png" />
+    <Image Include="Resources\Cutscenes\Intro\76.png" />
+    <Image Include="Resources\Cutscenes\Intro\77.png" />
+    <Image Include="Resources\Cutscenes\Intro\78.png" />
+    <Image Include="Resources\Cutscenes\Intro\79.png" />
+    <Image Include="Resources\Cutscenes\Intro\8.png" />
+    <Image Include="Resources\Cutscenes\Intro\80.png" />
+    <Image Include="Resources\Cutscenes\Intro\81.png" />
+    <Image Include="Resources\Cutscenes\Intro\82.png" />
+    <Image Include="Resources\Cutscenes\Intro\83.png" />
+    <Image Include="Resources\Cutscenes\Intro\84.png" />
+    <Image Include="Resources\Cutscenes\Intro\85.png" />
+    <Image Include="Resources\Cutscenes\Intro\86.png" />
+    <Image Include="Resources\Cutscenes\Intro\87.png" />
+    <Image Include="Resources\Cutscenes\Intro\88.png" />
+    <Image Include="Resources\Cutscenes\Intro\89.png" />
+    <Image Include="Resources\Cutscenes\Intro\9.png" />
+    <Image Include="Resources\Cutscenes\Intro\90.png" />
+    <Image Include="Resources\Cutscenes\Intro\91.png" />
+    <Image Include="Resources\Cutscenes\Intro\92.png" />
+    <Image Include="Resources\Cutscenes\Intro\93.png" />
+    <Image Include="Resources\Cutscenes\Intro\94.png" />
+    <Image Include="Resources\Cutscenes\Intro\95.png" />
+    <Image Include="Resources\Cutscenes\Intro\96.png" />
+    <Image Include="Resources\Cutscenes\Intro\97.png" />
+    <Image Include="Resources\Cutscenes\Intro\98.png" />
+    <Image Include="Resources\Cutscenes\Intro\99.png" />
+    <Image Include="Resources\Textures\Background.png" />
+    <Image Include="Resources\Textures\Blocks\Dirt.png" />
+    <Image Include="Resources\Textures\Blocks\Fern.png" />
+    <Image Include="Resources\Textures\Blocks\Flower.png" />
+    <Image Include="Resources\Textures\Blocks\Grass.png" />
+    <Image Include="Resources\Textures\Blocks\Leaves.png" />
+    <Image Include="Resources\Textures\Blocks\Stone.png" />
+    <Image Include="Resources\Textures\Blocks\Tree Base.png" />
+    <Image Include="Resources\Textures\Blocks\Tree.png" />
+    <Image Include="Resources\Textures\Button.png" />
+    <Image Include="Resources\Textures\Player.png" />
+    <Image Include="Resources\Textures\Sprite Sheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\Fonts\Arial\Arial Bold-Italic.ttf" />
+    <Font Include="Resources\Fonts\Arial\Arial Bold.ttf" />
+    <Font Include="Resources\Fonts\Arial\Arial Italic.ttf" />
+    <Font Include="Resources\Fonts\Arial\Arial.ttf" />
+    <Font Include="Resources\Fonts\Segoe Script\Segoe Script Bold.ttf" />
+    <Font Include="Resources\Fonts\Segoe Script\Segoe Script.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,7 +3,7 @@
 
 
 
-namespace summit {
+namespace sp {
 	Cutscene::Cutscene() : numFrames(0), currentFrame(0), paused(true) {
 
 	}
@@ -35,7 +35,7 @@ namespace summit {
 		}
 	}
 
-	void Cutscene::draw(summit::Window *window){
+	void Cutscene::draw(sp::Window *window){
 		window->draw( sprites[currentFrame] );
 	}
 

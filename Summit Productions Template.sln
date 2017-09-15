@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test Game", "Test Game\Test Game.vcxproj", "{97CB7E13-6A7A-430C-A735-7FD3A25E94A8}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -9,6 +9,16 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test Game", "Test Game\Test
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Engine\Engine.vcxproj", "{D44205C7-2C21-4B54-B571-B92AF095094B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Template", "Template\Template.vcxproj", "{30F0C38D-C995-4FC8-95D8-7C8E6B91B23D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D44205C7-2C21-4B54-B571-B92AF095094B} = {D44205C7-2C21-4B54-B571-B92AF095094B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lost Legacy", "Lost Legacy\Lost Legacy.vcxproj", "{A69355C6-0C9A-4E42-8317-DE2A326F702D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D44205C7-2C21-4B54-B571-B92AF095094B} = {D44205C7-2C21-4B54-B571-B92AF095094B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +44,22 @@ Global
 		{D44205C7-2C21-4B54-B571-B92AF095094B}.Release|x64.Build.0 = Release|x64
 		{D44205C7-2C21-4B54-B571-B92AF095094B}.Release|x86.ActiveCfg = Release|Win32
 		{D44205C7-2C21-4B54-B571-B92AF095094B}.Release|x86.Build.0 = Release|Win32
+		{30F0C38D-C995-4FC8-95D8-7C8E6B91B23D}.Debug|x64.ActiveCfg = Debug|x64
+		{30F0C38D-C995-4FC8-95D8-7C8E6B91B23D}.Debug|x64.Build.0 = Debug|x64
+		{30F0C38D-C995-4FC8-95D8-7C8E6B91B23D}.Debug|x86.ActiveCfg = Debug|Win32
+		{30F0C38D-C995-4FC8-95D8-7C8E6B91B23D}.Debug|x86.Build.0 = Debug|Win32
+		{30F0C38D-C995-4FC8-95D8-7C8E6B91B23D}.Release|x64.ActiveCfg = Release|x64
+		{30F0C38D-C995-4FC8-95D8-7C8E6B91B23D}.Release|x64.Build.0 = Release|x64
+		{30F0C38D-C995-4FC8-95D8-7C8E6B91B23D}.Release|x86.ActiveCfg = Release|Win32
+		{30F0C38D-C995-4FC8-95D8-7C8E6B91B23D}.Release|x86.Build.0 = Release|Win32
+		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Debug|x64.ActiveCfg = Debug|x64
+		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Debug|x64.Build.0 = Debug|x64
+		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Debug|x86.ActiveCfg = Debug|Win32
+		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Debug|x86.Build.0 = Debug|Win32
+		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Release|x64.ActiveCfg = Release|x64
+		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Release|x64.Build.0 = Release|x64
+		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Release|x86.ActiveCfg = Release|Win32
+		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

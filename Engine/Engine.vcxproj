@@ -71,20 +71,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>P:\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>P:\Libraries\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>P:\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>P:\Libraries\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>P:\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>P:\Libraries\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>P:\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>P:\Libraries\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -98,7 +98,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -112,6 +112,9 @@
     <Link>
       <SubSystem>Windows</SubSystem>
     </Link>
+    <Lib>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -128,6 +131,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -144,30 +150,57 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="..\Change Log.txt" />
+    <Text Include="..\Todo.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Assets\Source\AI\AI.h" />
     <ClInclude Include="Assets\Source\GameCore.h" />
     <ClInclude Include="Assets\Source\Graphics\Animation.h" />
+    <ClInclude Include="Assets\Source\Graphics\Camera.h" />
     <ClInclude Include="Assets\Source\Graphics\Cutscene.h" />
     <ClInclude Include="Assets\Source\Graphics\Image.h" />
     <ClInclude Include="Assets\Source\Graphics\Text.h" />
+    <ClInclude Include="Assets\Source\Math\Point.h" />
+    <ClInclude Include="Assets\Source\Math\Vector.h" />
     <ClInclude Include="Assets\Source\System\State.h" />
     <ClInclude Include="Assets\Source\System\StateManager.h" />
     <ClInclude Include="Assets\Source\System\Window.h" />
-    <ClInclude Include="Assets\Source\UI\UI.h" />
-    <ClInclude Include="Assets\Source\Util\FileManager.h" />
+    <ClInclude Include="Assets\Source\UI\Button.h" />
+    <ClInclude Include="Assets\Source\UI\GamePad.h" />
+    <ClInclude Include="Assets\Source\UI\GUI.h" />
+    <ClInclude Include="Assets\Source\Util\File.h" />
+    <ClInclude Include="Assets\Source\Util\Save.h" />
+    <ClInclude Include="Assets\Source\World\Block.h" />
+    <ClInclude Include="Assets\Source\World\Entities\Entity.h" />
+    <ClInclude Include="Assets\Source\World\Map.h" />
+    <ClInclude Include="Assets\Source\World\World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Assets\Source\AI\AI.cpp" />
     <ClCompile Include="Assets\Source\GameCore.cpp" />
+    <ClCompile Include="Assets\Source\Graphics\Camera.cpp" />
     <ClCompile Include="Assets\Source\Graphics\Cutscene.cpp" />
     <ClCompile Include="Assets\Source\Graphics\Image.cpp" />
     <ClCompile Include="Assets\Source\Graphics\Text.cpp" />
+    <ClCompile Include="Assets\Source\Math\Vector.cpp" />
     <ClCompile Include="Assets\Source\System\StateManager.cpp" />
     <ClCompile Include="Assets\Source\System\Window.cpp" />
-    <ClCompile Include="Assets\Source\Util\FileManager.cpp" />
+    <ClCompile Include="Assets\Source\UI\Button.cpp" />
+    <ClCompile Include="Assets\Source\UI\GamePad.cpp" />
+    <ClCompile Include="Assets\Source\UI\GUI.cpp" />
+    <ClCompile Include="Assets\Source\Util\File.cpp" />
+    <ClCompile Include="Assets\Source\Util\Save.cpp" />
+    <ClCompile Include="Assets\Source\World\Block.cpp" />
+    <ClCompile Include="Assets\Source\World\Entities\Entity.cpp" />
+    <ClCompile Include="Assets\Source\World\Map.cpp" />
+    <ClCompile Include="Assets\Source\World\World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

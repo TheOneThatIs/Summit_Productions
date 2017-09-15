@@ -2,7 +2,7 @@
 #include<iostream>
 
 
-namespace summit{
+namespace sp{
 
 	StateManager::StateManager() {}
 	StateManager::~StateManager() {}

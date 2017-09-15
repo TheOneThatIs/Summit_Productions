@@ -4,25 +4,26 @@
 #include<SFML\Graphics.hpp>
 #include<iostream>
 #include"..\System\Window.h"
+#include"..\Math\Point.h"
 
 
-namespace summit {
+namespace sp {
 	class Image {
 		sf::Texture texture;
-		sf::Vector2f pos;
+		sp::Point pos;
 		sf::Sprite sprite;
 	public:
 		Image();
-		Image(std::string filePath, sf::Vector2f pos);
+		Image(std::string filePath, sp::Point pos);
 
-		void init(std::string filePath, sf::Vector2f pos);
-		void init(std::string filePath, sf::Vector2f pos, sf::IntRect crop);
+		void init(std::string filePath, sp::Point pos);
+		void init(std::string filePath, sp::Point, sf::IntRect crop);
 
 		void resize(float factorX, float factorY);
 
 		sf::Sprite *getSprite();
 
-		void setPosition(sf::Vector2f pos);
-		void draw(summit::Window *window);
+		void setPosition(sp::Point pos);
+		void draw(sp::Window *window);
 	};
 }

@@ -1,0 +1,113 @@
+									**********Change Log**********
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+_-_-  v0.1a  -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+	Solution
+		-Created library files
+		-Created Solution: TestGame
+		-Created Solution: Engine
+		-Linked SFML and Engine
+
+	Engine
+		CLASS CHANGES
+			-Added Class:  State
+			-Added Class:  StateManager
+			-Added Class:  Window
+			-Added Class:  SpriteManager
+			-Added Class:  Image
+			-Added Class:  Cutscene
+			-Added Class:  Text
+			-Added Class:  TextManager
+			-Added Class:  Button
+			-Added Class:  File
+
+	TestGame
+		CLASS CHANGES
+			-Added Class:  main
+			-Added Class:  GameCore
+			-Added Class:  Game
+			-Added Class:  Intro
+			-Added Class:  TitleScreen
+
+	Assets
+		-Added intro animation
+		-Added test images: Player.png, Background.png, Button.png, Sprite Sheet.png
+		-Added fonts: Arial, Segoe Script
+
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+_-_-  v0.2a  -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+	Broke everything
+
+
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+_-_-  v0.3a  -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+	Solution
+		-Fixed most of the things the previous version broke
+		-Reorganized class files
+
+	Engine
+		CLASS CHANGES
+			-Added header files to classes missing them
+			-Added a semi-working timestep
+			-Added Class:	GameCore
+			-Added Class:	Save
+			-Removed Class: SpriteManager
+			-Image now does the job of SpriteManager
+			-Replaced most int x, y with SFML's vectors
+			-Removed unused variables
+			-Reworked TextManager
+			-Defined StateManager's missing deleteState() function
+			-Removed State's implementation file
+			-Renamed UI to GUI
+			-Implemented inheritence with GUI::Button
+			-Reworked GUI
+			-Reworked Button
+
+	TestGame
+		CLASS CHANGES
+			-Moved GameCore to Engine
+			-Removed Class:  Game
+			-Removed Class:  Intro
+			-Removed Class:  TitleScreen
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+_-_-  v0.4a  -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+Solution
+	-Added solution Template for use with project creation
+	-Added solution Lost Legacy in preparation for Engine completion
+	-Changed namespace 'summit' to 'sp'
+
+	Engine
+		CLASS CHANGES
+			-Added Class:	Block
+			-Added Class:	Entity
+			-Added Class:	GamePad
+			-Added Struct:	Point
+			-Added Struct:  Point3D
+			-Added Class:	Vector
+			-Added Class:	World
+			-Added Class:	Camera
+			-Added Class:	Map
+			-Added Class:	World
+			-Vector
+				overrode operators '+', '-', '*'
+
+	Template
+		CLASS CHANGES
+			-Added Class:  Player
+			-Added Class:  Game
+
+	Assets
+		-Added Change Log.txt
+		-Added Todo.txt
+		-Added blocks: Stone.png, Dirt.png, Grass.png, Flower.png, Fern.png, Tree Base.png, Tree.png, Leaves.png

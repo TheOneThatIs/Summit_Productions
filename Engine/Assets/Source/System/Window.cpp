@@ -1,7 +1,7 @@
 #include "Window.h"
 
 
-namespace summit {
+namespace sp {
 	Window::Window(): isFullscreen(false) {}
 
 	Window::Window(std::string name, int width, int height) {
@@ -34,6 +34,10 @@ namespace summit {
 		renderWindow.setKeyRepeatEnabled(enabled);
 	}
 
+	void Window::setCam(Camera cam) {
+		renderWindow.setView(cam.view);
+	}
+
 	void Window::setDimensions(int width, int height) {
 		renderWindow.setSize(sf::Vector2u(width, height));
 	}
@@ -59,6 +63,10 @@ namespace summit {
 	}
 	int Window::getHeight() {
 		return renderWindow.getSize().y;
+	}
+
+	sf::View Window::getDefaultView() {
+		return renderWindow.getDefaultView();
 	}
 	
 	void Window::close() {
