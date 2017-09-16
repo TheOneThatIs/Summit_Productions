@@ -1,6 +1,6 @@
 #define WIDTH 1280
 #define HEIGHT 720
-#define TITLE "v0.4a"
+#define TITLE "v0.5a"
 #include "TestGame.h"
 #include<iostream>
 
@@ -50,9 +50,9 @@ TestGame::TestGame() :
 
 
 	// WORLD
-	world.registerBlock(4, &stone);
-	world.registerBlock(0, &dirt);
-	testMap1.loadMap("Resources/Maps/Test World 1.csv", world.getBlockRegistry());
+	//world.registerBlock(4, &stone);
+	//world.registerBlock(0, &dirt);
+	//testMap1.loadMap("Resources/Maps/Test World 1.csv", world.getBlockRegistry());
 	world.setMap(&testMap1);
 	world.spawn(&player, 0, 0);
 	world.spawn(&player2, 100, 100);
@@ -61,18 +61,18 @@ TestGame::TestGame() :
 
 void TestGame::start() {
 	sf::Event event;
-	gameCore.init(windowPtr);
+	gameCore.init(&window, 100);
 
 	playerSave.load();
 
+
 	while (window.isOpen()) {
-		gameCore.loopStart();
-		gameCore.calculateFPS();
 		
-		while (gameCore.getAccumulator() > TARGET_FRAME_TIME) {
-			gameCore.updateAsNeeded();
-			this->update(event);
-		}
+		gameCore.timeStep();
+
+		if(gameCore.getUpdateQueue() > 0)
+			for (int i = gameCore.getUpdateQueue(); i > 0; i--)
+				update(event);
 
 		draw();
 	}

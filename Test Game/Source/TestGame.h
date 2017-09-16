@@ -2,14 +2,15 @@
 #include<Engine\Assets\Source\GameCore.h>
 #include<Engine\Assets\Source\Graphics\Image.h>
 #include<Engine\Assets\Source\Graphics\Text.h>
+#include<Engine\Assets\Source\Graphics\Camera.h>
 #include<Engine\Assets\Source\Util\Save.h>
 #include<Engine\Assets\Source\UI\GUI.h>
 #include<Engine\Assets\Source\UI\Button.h>
 #include<Engine\Assets\Source\Math\Point.h>
-#include<Engine\Assets\Source\Graphics\Camera.h>
 #include<Engine\Assets\Source\World\Entities\Entity.h>
 #include<Engine\Assets\Source\World\World.h>
 #include<Engine\Assets\Source\World\Map.h>
+
 #include"Entities\Player.h"
 #include"Blocks\Dirt.h"
 #include"Blocks\Stone.h"
@@ -17,11 +18,10 @@
 
 
 class TestGame {
-	const float	TARGET_FPS = 30; // ***BUG***   values higher than 31 break the game
+	const float	TARGET_FPS = 100;
 	const float MS_PER_SEC = 1000;
 	const float TARGET_FRAME_TIME = (MS_PER_SEC / TARGET_FPS);
 
-	
 	// WINDOW
 	sp::Window window;
 	sp::Window *windowPtr;
