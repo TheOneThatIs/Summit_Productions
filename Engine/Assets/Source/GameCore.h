@@ -17,6 +17,7 @@ namespace sp {
 		float accumulator;
 		float time;
 		float fps, ups;
+		float deltaTime;
 
 	public:
 		GameCore();
@@ -29,9 +30,12 @@ namespace sp {
 		void bindWindow(Window &window);
 
 		void updateCursorPos(sf::Event &event);
-		sp::Point getMousePos();
+		Point getMousePos();
 
 		int getUpdateQueue();
+		float getFPS();
+		float getUPS();
+		float getDeltaTime();
 
 		void timeStep();
 	};

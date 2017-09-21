@@ -1,6 +1,6 @@
 #define WIDTH 1280
 #define HEIGHT 720
-#define TITLE "v0.5a"
+#define TITLE "v0.5.1a"
 #include "TestGame.h"
 #include<iostream>
 
@@ -53,7 +53,7 @@ TestGame::TestGame() :
 	//world.registerBlock(4, &stone);
 	//world.registerBlock(0, &dirt);
 	//testMap1.loadMap("Resources/Maps/Test World 1.csv", world.getBlockRegistry());
-	world.setMap(&testMap1);
+	//world.setMap(&testMap1);
 	world.spawn(&player, 0, 0);
 	world.spawn(&player2, 100, 100);
 	world.spawn(&player3, 200, 300);
@@ -61,7 +61,7 @@ TestGame::TestGame() :
 
 void TestGame::start() {
 	sf::Event event;
-	gameCore.init(&window, 100);
+	gameCore.init(&window, 60);
 
 	playerSave.load();
 
@@ -136,17 +136,18 @@ void TestGame::update(sf::Event &event) {
 					}
 				break;
 		}
+		//player.update(event);
 	}
-	world.update();
+	//world.update();
 
 	animateText();
 }
 
 void TestGame::draw() {
-	window.clear(sf::Color(0, 0, 0, 0));
+	window.clear(sf::Color(255, 255, 255, 0));
 
 	window.setCam(cam);
-	world.draw(&window);
+	//world.draw(&window);
 	testText.drawText(&window);
 	button->draw();
 
@@ -169,8 +170,8 @@ void TestGame::animateText() {
 	textColor.r = std::cos((textTime+1)*.5f) * 255;
 	textColor.g = std::sin((textTime+1)*.5f) * 255;
 	textColor.b = std::cos((textTime+1)*.5f) * 255;
-
 	testText.setColor(textColor);
+
 	testText.setPosition(std::abs(std::cos((textTime + 1)*.5f) * 255), std::abs(std::cos((textTime + 1)*.5f) * 255));
 	
 	textTime -= .05f;

@@ -10,7 +10,7 @@ public:
 
 	void uponCreation() override;
 
-	void update() override;
+	void update(sf::Event &event) override;
 	void draw(sp::Window *window) override;
 
 	void uponDestruction() override;

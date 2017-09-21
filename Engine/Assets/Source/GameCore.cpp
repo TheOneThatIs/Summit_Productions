@@ -18,7 +18,7 @@ namespace sp {
 	void GameCore::init(Window *window, int targetFPS) {
 		initStates();
 		bindWindow(*window);
-		targetFrameTime = (MS_PER_SEC / targetFPS);
+		targetFrameTime = (1.0f / targetFPS);
 	}
 
 
@@ -36,19 +36,19 @@ namespace sp {
 
 	void GameCore::timeStep() {
 		//add last frame's time to accumulator
-		accumulator += timer.getElapsedTime().asMilliseconds();
+		accumulator += timer.getElapsedTime().asSeconds();
 
 		//add last frame's time to time; reset timer to time upcoming frame
-		time += timer.restart().asSeconds();
+		time += timer.restart().asMilliseconds();
 
 		//count fps and ups
-		if (time >= 1.0f) { // 1 second passed
+		if (time >= 100.0f) { // 1 second passed
 			//update fps with frame counter; reset frame counter
 			fps = (float)frameCount / time;
 			frameCount = 0;
 
 			//update ups with update counter; reset update counter
-			ups = (float)updateCount / time;
+			ups = (float)updateCount;
 			updateCount = 0;
 
 			//reset time
@@ -74,8 +74,20 @@ namespace sp {
 		mousePos.x = (float)event.mouseMove.x;
 		mousePos.y = (float)event.mouseMove.y;
 	}
-	sp::Point GameCore::getMousePos() {
+
+	Point GameCore::getMousePos() {
 		return mousePos;
+	}
+
+	float GameCore::getFPS() {
+		return fps;
+	}
+	float GameCore::getUPS() {
+		return ups;
+	}
+	float GameCore::getDeltaTime() {
+		//return deltaTime;
+		return 0.0f;
 	}
 
 	int GameCore::getUpdateQueue() {

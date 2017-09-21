@@ -15,7 +15,7 @@ namespace sp {
 		Entity(int id);
 
 		virtual void uponCreation() = 0;
-		virtual void update() = 0;
+		virtual void update(sf::Event &event) = 0;
 		virtual void draw(sp::Window *window) = 0;
 		virtual void uponDestruction() = 0;
 

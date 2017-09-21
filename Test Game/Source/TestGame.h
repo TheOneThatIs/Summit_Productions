@@ -18,10 +18,6 @@
 
 
 class TestGame {
-	const float	TARGET_FPS = 100;
-	const float MS_PER_SEC = 1000;
-	const float TARGET_FRAME_TIME = (MS_PER_SEC / TARGET_FPS);
-
 	// WINDOW
 	sp::Window window;
 	sp::Window *windowPtr;

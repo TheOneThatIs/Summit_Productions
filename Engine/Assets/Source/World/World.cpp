@@ -34,7 +34,7 @@ namespace sp {
 		currentMap->update();
 
 		for (int i = 0; i < entities.size(); i++)
-			entities[i]->update();
+			;// entities[i]->update();
 	}
 
 	bool World::spawn(Entity *entity, float x, float y) {
