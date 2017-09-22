@@ -9,65 +9,64 @@ namespace sp {
 
 	GameCore::GameCore() {
 		mousePos = { 0, 0 };
-		updateQueue = 0;
 	}
-	GameCore::~GameCore() {}
+	GameCore::~GameCore() {
+		coreWindow->close();
+	}
 
 
 
-	void GameCore::init(Window *window, int targetFPS) {
-		initStates();
-		bindWindow(*window);
+	void GameCore::gameLoop(sf::Event &event, int targetFPS){
+		float targetFrameTime = 0;
+		int frameCount = 0, updateCount = 0;
+		sf::Clock timer;
+		float accumulator = 0;
+		float time = 0;
+
+
 		targetFrameTime = (1.0f / targetFPS);
-	}
 
+		while (coreWindow->isOpen()) {
 
-	void GameCore::initStates() {
+			//add last frame's time to accumulator
+			accumulator += timer.getElapsedTime().asSeconds();
 
-	}
+			//add last frame's time to time; reset timer to time upcoming frame
+			time += timer.restart().asSeconds();
 
-	void GameCore::deinit() {
-		window->close();
+			//count fps and ups
+			if (time >= 1.0f) { // 1 second passed
+								//update fps with frame counter; reset frame counter
+				fps = (float)frameCount / time;
+				frameCount = 0;
+
+				//update ups with update counter; reset update counter
+				ups = (float)updateCount;
+				updateCount = 0;
+
+				std::cout << "fps: " << fps << std::endl;
+				std::cout << "ups: " << ups << std::endl;
+
+				//reset time
+				time = 0.0;
+			}
+
+			while (accumulator >= targetFrameTime) { // While we're behind on updates
+				updateCount++;
+
+				accumulator -= targetFrameTime;
+
+				update(event);
+			}
+			//increment frame counter
+			frameCount++;
+
+			draw();
+		}
 	}
 
 	void GameCore::bindWindow(Window &window) {
-		this->window = &window;
-	}
-
-	void GameCore::timeStep() {
-		//add last frame's time to accumulator
-		accumulator += timer.getElapsedTime().asSeconds();
-
-		//add last frame's time to time; reset timer to time upcoming frame
-		time += timer.restart().asMilliseconds();
-
-		//count fps and ups
-		if (time >= 100.0f) { // 1 second passed
-			//update fps with frame counter; reset frame counter
-			fps = (float)frameCount / time;
-			frameCount = 0;
-
-			//update ups with update counter; reset update counter
-			ups = (float)updateCount;
-			updateCount = 0;
-
-			//reset time
-			time = 0.0;
-
-			std::cout << "fps: " << fps << std::endl;
-			std::cout << "ups: " << ups << std::endl;
-		}
-
-		updateQueue = 0;
-		while (accumulator >= targetFrameTime) {
-			updateCount++;
-
-			accumulator -= targetFrameTime;
-
-			updateQueue++;
-		}
-		//increment frame counter
-		frameCount++;
+		this->coreWindow = &window;
 	}
 	
 	void GameCore::updateCursorPos(sf::Event &event) {
@@ -84,13 +83,5 @@ namespace sp {
 	}
 	float GameCore::getUPS() {
 		return ups;
-	}
-	float GameCore::getDeltaTime() {
-		//return deltaTime;
-		return 0.0f;
-	}
-
-	int GameCore::getUpdateQueue() {
-		return updateQueue;
 	}
 }

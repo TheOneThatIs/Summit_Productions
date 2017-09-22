@@ -1,4 +1,5 @@
 #include "Player.h"
+#include<iostream>
 
 
 
@@ -11,12 +12,11 @@ Player::~Player(){
 
 
 void Player::uponCreation() {
-	std::cout << "Player created!" << std::endl;
+	std::cout << "Player with ID " << id << " created!" << std::endl;
 	img_spriteSheet.init("Resources/Textures/Player.png", sp::Point(100, 100), sf::IntRect(0, 81, 18, 39));
 }
 
 void Player::update(sf::Event &event) {
-	//std::cout << "Updating the player with ID: " << id << std::endl;
 	img_spriteSheet.setPosition(getPos());
 
 	switch (event.type) {
@@ -34,7 +34,6 @@ void Player::update(sf::Event &event) {
 }
 
 void Player::draw(sp::Window *window) {
-	//std::cout << "Drawing the player with ID: " << id << std::endl;
 	img_spriteSheet.draw(window);
 }
 

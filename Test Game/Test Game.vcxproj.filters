@@ -55,6 +55,7 @@
     <None Include="Resources\Saves\TestFile.sav" />
     <None Include="Resources\Cutscenes\Intro\0000-0085.avi" />
     <None Include="Resources\Maps\Test World 1.csv" />
+    <None Include="Resources\Maps\Small World Test.csv" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Cutscenes\Intro\0.png">

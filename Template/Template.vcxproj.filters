@@ -17,12 +17,8 @@
     <ClCompile Include="Source\Game.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Entities\Player.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Game.h" />
-    <ClInclude Include="Source\Entities\Player.h" />
   </ItemGroup>
 </Project>

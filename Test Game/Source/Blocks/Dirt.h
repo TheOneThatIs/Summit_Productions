@@ -1,8 +1,8 @@
 #pragma once
-#include <Engine\Assets\Source\World\Block.h>
+#include <Engine\Assets\Source\World\Tile.h>
 
 
-class Dirt : public sp::Block{
+class Dirt : public sp::Tile{
 public:
-	Dirt();
+	Dirt(int id);
 };

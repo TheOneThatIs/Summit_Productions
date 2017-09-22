@@ -1,5 +1,5 @@
 #pragma once
-#include<Engine\Assets\Source\World\Entities\Entity.h>
+#include<Engine\Assets\Source\World\Entity.h>
 #include<Engine\Assets\Source\System\Window.h>
 
 

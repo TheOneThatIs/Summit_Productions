@@ -2,6 +2,6 @@
 
 
 
-Stone::Stone(){
+Stone::Stone(int id) : Tile(id){
 	
 }

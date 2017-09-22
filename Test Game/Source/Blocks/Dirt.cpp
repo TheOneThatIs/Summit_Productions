@@ -2,6 +2,6 @@
 
 
 
-Dirt::Dirt() {
+Dirt::Dirt(int id) : Tile(id) {
 	
 }

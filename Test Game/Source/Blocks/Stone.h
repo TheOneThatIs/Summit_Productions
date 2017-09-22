@@ -1,7 +1,7 @@
 #pragma once
-#include <Engine\Assets\Source\World\Block.h>
+#include <Engine\Assets\Source\World\Tile.h>
 
-class Stone : public sp::Block{
+class Stone : public sp::Tile{
 public:
-	Stone();
+	Stone(int id);
 };

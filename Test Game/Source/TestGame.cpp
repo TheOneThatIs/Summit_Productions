@@ -2,80 +2,55 @@
 #define HEIGHT 720
 #define TITLE "v0.5.1a"
 #include "TestGame.h"
-#include<iostream>
+
+#include<SFML\Graphics.hpp>
 
 #include<Engine\Assets\Source\System\Window.h>
+#include<Engine\Assets\Source\UI\Button.h>
+#include<Engine\Assets\Source\Math\Vector.h>
+
+#include<iostream>
 #include<fstream>
 #include<string>
-#include<SFML\Graphics.hpp>
-#include<Engine\Assets\Source\Math\Vector.h>
 
 
 TestGame::TestGame() :
-	player(Player(1)),
-	player2(Player(2)),
-	player3(Player(3)),
+	testMap1(0, "Resources/Maps/Small World Test.csv"), testMap2(1, "Resources/Maps/Test World 1.csv"),
+	player(Player(0)), player2(Player(1)), player3(Player(2)),
 	cam(sf::FloatRect(0, 0, WIDTH, HEIGHT)),
-	textRotation(0),
-	textColor(0, 0, 0, 255),
-	textTime(0),
-	textTimeUp(true){
-
+	textRotation(0), textColor(0, 0, 0, 255), textTime(0){
 
 	// WINDOW
-	windowPtr = &window;
-	window.create(TITLE, WIDTH, HEIGHT);
-	window.setKeyRepeatEnabled(true);
-	window.setCam(cam);
+		window.create(TITLE, WIDTH, HEIGHT);
+		window.setKeyRepeatEnabled(true);
+		window.setCam(cam);
+		bindWindow(window);
 
 
 	// TEST TEXT
-	testText.init("Hello world!", "Resources/Fonts/Arial/Arial.ttf", 50, sf::Color::White, 200.0f, 200.0f);
-	testText.setOrigin(sp::Text::MIDDLE);
+		testText.init("Hello world!", "Resources/Fonts/Arial/Arial.ttf", 50, sf::Color::White, 200.0f, 200.0f);
+		testText.setOrigin(sp::Text::MIDDLE);
 
 
 	// TEST SAVE
-	//playerSave.associateFile("Resources/Saves/TestFile.sav");
-	//playerSave.registerFloat("TestGame::playerPos.x", &playerPos.x);
-	//playerSave.registerFloat("TestGame::playerPos.y", &playerPos.y);
-	//playerSave.registerBool("TestGame::isPlayerRunning", &isPlayerRunning);
+		//playersave.associatefile("resources/saves/testfile.sav");
+		//playersave.registerfloat("testgame::playerpos.x", &playerpos.x);
+		//playersave.registerfloat("testgame::playerpos.y", &playerpos.y);
+		//playersave.registerbool("testgame::isplayerrunning", &isplayerrunning);
 
 
 	// BUTTON
-	button = new sp::Button;
-	button->init("Resources/Textures/Button.png", sf::IntRect(0, 0, 200, 50), sp::Point(100, 0), windowPtr);
+		button = new sp::Button;
+		button->init("resources/textures/button.png", sf::IntRect(0, 0, 200, 50), sp::Point(100, 0), &window);
 	
 
-	//testVectors();
+	//testvectors();
 
 
 	// WORLD
-	//world.registerBlock(4, &stone);
-	//world.registerBlock(0, &dirt);
-	//testMap1.loadMap("Resources/Maps/Test World 1.csv", world.getBlockRegistry());
-	//world.setMap(&testMap1);
-	world.spawn(&player, 0, 0);
-	world.spawn(&player2, 100, 100);
-	world.spawn(&player3, 200, 300);
-}
-
-void TestGame::start() {
-	sf::Event event;
-	gameCore.init(&window, 60);
-
-	playerSave.load();
-
-
-	while (window.isOpen()) {
-		
-		gameCore.timeStep();
-
-		if(gameCore.getUpdateQueue() > 0)
-			for (int i = gameCore.getUpdateQueue(); i > 0; i--)
-				update(event);
-
-		draw();
-	}
+		registerEntities();
+		registerTiles();
+		registerMaps();
 }
 
 void TestGame::testVectors() {
@@ -112,8 +87,8 @@ void TestGame::update(sf::Event &event) {
 				window.close();
 				break;
 			case sf::Event::MouseMoved:
-				gameCore.updateCursorPos(event);
-				mousePos = gameCore.getMousePos();
+				updateCursorPos(event);
+				mousePos = getMousePos();
 				break;
 			case sf::Event::MouseButtonPressed:
 				if (button->update(mousePos))
@@ -136,9 +111,8 @@ void TestGame::update(sf::Event &event) {
 					}
 				break;
 		}
-		//player.update(event);
+		world.update(event);
 	}
-	//world.update();
 
 	animateText();
 }
@@ -152,6 +126,22 @@ void TestGame::draw() {
 	button->draw();
 
 	window.display();
+}
+
+void TestGame::registerEntities(){
+	world.registerEntity(&player);
+	world.registerEntity(&player2);
+	world.registerEntity(&player3);
+}
+
+void TestGame::registerTiles() {
+	world.registerTile(new Dirt(0));
+	world.registerTile(new Stone(1));
+}
+
+void TestGame::registerMaps() {
+	world.registerTileMap(&testMap1);
+	world.registerTileMap(&testMap2);
 }
 
 void TestGame::moveCam() {

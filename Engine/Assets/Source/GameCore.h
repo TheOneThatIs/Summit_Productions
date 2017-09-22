@@ -5,38 +5,26 @@
 
 namespace sp {
 	class GameCore {
-		Window *window;
+		Window *coreWindow;
 		sp::Point mousePos;
 
-		// TIME-STEP
-		const float MS_PER_SEC = 1000;
-		float targetFrameTime;
-		int frameCount, updateCount;
-		int updateQueue;
-		sf::Clock timer;
-		float accumulator;
-		float time;
 		float fps, ups;
-		float deltaTime;
 
 	public:
 		GameCore();
 		~GameCore();
 
-		void init(Window *window, int targetFPS);
-		void initStates();
-		void deinit();
+		virtual void draw() = 0;
+		virtual void update(sf::Event &event) = 0;
+
+		virtual void gameLoop(sf::Event &event, int targetFPS);
 
 		void bindWindow(Window &window);
 
 		void updateCursorPos(sf::Event &event);
 		Point getMousePos();
 
-		int getUpdateQueue();
 		float getFPS();
 		float getUPS();
-		float getDeltaTime();
-
-		void timeStep();
 	};
 }
