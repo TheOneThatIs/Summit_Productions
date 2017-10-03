@@ -6,7 +6,8 @@
 
 namespace sp {
 	class TileMap {
-		std::vector< std::vector<Tile*> > tiles;
+		//std::vector< std::vector<Tile*> > tiles;
+		Tile* tiles[5][5];
 		int id;
 		std::string filePath;
 
@@ -18,7 +19,7 @@ namespace sp {
 		void update(sf::Event& event);
 
 		bool loadMap(std::string filePath, std::vector<Tile*> &tileRegistry);
-		Tile loadTile(int id, std::vector<Tile*> &tileRegistry);
+		Tile* loadTile(int id, std::vector<Tile*> &tileRegistry);
 
 		int getID();
 		std::string getFilePath();

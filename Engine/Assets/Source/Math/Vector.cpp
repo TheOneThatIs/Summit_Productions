@@ -1,6 +1,6 @@
 #include"Vector.h"
 #include<math.h>
-#include<iostream>
+
 
 namespace sp{
 
@@ -22,11 +22,11 @@ namespace sp{
 		magnitude = sqrt(x*x + y*y);
 	}
 
-	Point Vector::getOrigin() {
+	Point Vector::getOrigin() const {
 		return origin;
 	}
 
-	float Vector::getMagnitude() {
+	float Vector::getMagnitude() const {
 		return magnitude;
 	}
 
@@ -39,44 +39,31 @@ namespace sp{
 
 
 
-	Vector Vector::operator + (Vector vec) {
-		Vector temp;
-		temp.setOrigin(origin.x + vec.getOrigin().x, origin.y + vec.getOrigin().y);
-
-		return temp;
+	Vector Vector::operator + (Vector vec) const {
+		return Vector(origin.x + vec.getOrigin().x, origin.y + vec.getOrigin().y);
 	}
 
-	Vector Vector::operator + (float factor) {
-		Vector temp;
-		temp.setOrigin(origin.x + factor, origin.y + factor);
-
-		return temp;
+	Vector Vector::operator + (float factor) const {
+		return Vector(origin.x + factor, origin.y + factor);
 	}
 
-	Vector Vector::operator - (Vector vec) {
-		Vector temp;
-		temp.setOrigin(origin.x - vec.getOrigin().x, origin.y - vec.getOrigin().y);
-
-		return temp;
+	Vector Vector::operator - (Vector vec) const {
+		return Vector(origin.x - vec.getOrigin().x, origin.y - vec.getOrigin().y);
 	}
 
-	Vector Vector::operator - (float factor) {
-		Vector temp;
-		temp.setOrigin(origin.x - factor, origin.y - factor);
-
-		return temp;
+	Vector Vector::operator - (float factor) const {
+		return Vector(origin.x - factor, origin.y - factor);
 	}
 
-	Vector Vector::operator * (float factor) {
-		Vector temp;
-		temp.setOrigin(origin.x * factor, origin.y * factor);
-
-		return temp;
+	Vector Vector::operator * (float factor) const {
+		return Vector(origin.x * factor, origin.y * factor);
 	}
-	Vector Vector::operator * (Vector vec) {
-		Vector temp;
-		temp.setOrigin(origin.x * vec.getOrigin().x, origin.y * vec.getOrigin().y);
-
-		return temp;
+	Vector Vector::operator * (Vector vec) const {
+		return Vector(origin.x * vec.getOrigin().x, origin.y * vec.getOrigin().y);
 	}
+	//std::ostream& Vector::operator<<(std::ostream& stream, const Vector& vec) const {
+	//	// TO-DO
+	//	stream << "(" << vec.getOrigin().x << ", " << vec.getOrigin().y << ")";
+	//	return stream;
+	//}
 }

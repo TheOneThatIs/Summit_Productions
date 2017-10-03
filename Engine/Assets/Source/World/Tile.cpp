@@ -11,8 +11,7 @@ namespace sp {
 	}
 
 	void Tile::setTexture(std::string filePath) {
-		Image image;
-		image.init(filePath, pos);
+		texture.init(filePath, pos);
 	}
 
 	int Tile::getID() {
@@ -21,5 +20,23 @@ namespace sp {
 
 	void Tile::draw(Window *window) {
 		texture.draw(window);
+	}
+
+	void Tile::setPosition(float x, float y) {
+		pos.x = x;
+		pos.y = y;
+		texture.setPosition(Point(x, y));
+	}
+
+	float Tile::getWidth() {
+		return width;
+	}
+	float Tile::getHeight() {
+		return height;
+	}
+
+	void Tile::setDimensions(float width, float height) {
+		this->width = width;
+		this->height = height;
 	}
 }

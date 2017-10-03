@@ -1,6 +1,6 @@
 #define WIDTH 1280
 #define HEIGHT 720
-#define TITLE "v0.5.1a"
+#define TITLE "v0.6.1a"
 #include "TestGame.h"
 
 #include<SFML\Graphics.hpp>
@@ -44,7 +44,7 @@ TestGame::TestGame() :
 		button->init("resources/textures/button.png", sf::IntRect(0, 0, 200, 50), sp::Point(100, 0), &window);
 	
 
-	//testvectors();
+	//testVectors();
 
 
 	// WORLD
@@ -57,26 +57,26 @@ void TestGame::testVectors() {
 	sp::Vector v1(1.0f, 4.0f), v2(2.0f, 0.0f);
 
 	sp::Vector v3 = v1 + v2;
-	std::cout << "v1(1, 4) + v2(2, 0) = " << "v3(" << v3.getOrigin().x << ", " << v3.getOrigin().y << ")" << std::endl;
+	std::cout << "v1(1, 4) + v2(2, 0) = " << "v3" << &v3 << std::endl;
 
 	v3 = v1 + 2;
-	std::cout << "v1(1, 4) + 2 = " << "v3(" << v3.getOrigin().x << ", " << v3.getOrigin().y << ")" << std::endl;
+	std::cout << "v1(1, 4) + 2 = " << "v3" << &v3 << std::endl;
 
 	v3 = v1 - v2;
-	std::cout << "v1(1, 4) - v2(2, 0) = " << "v3(" << v3.getOrigin().x << ", " << v3.getOrigin().y << ")" << std::endl;
+	std::cout << "v1(1, 4) - v2(2, 0) = " << "v3" << &v3 << std::endl;
 
 	v3 = v1 - 2;
-	std::cout << "v1(1, 4) - 2 = " << "v3(" << v3.getOrigin().x << ", " << v3.getOrigin().y << ")" << std::endl;
+	std::cout << "v1(1, 4) - 2 = " << "v3" << &v3 << std::endl;
 
 	v3 = v1 * v2;
-	std::cout << "v1(1, 4) * v2(2, 0) = " << "v3(" << v3.getOrigin().x << ", " << v3.getOrigin().y << ")" << std::endl;
+	std::cout << "v1(1, 4) * v2(2, 0) = " << "v3" << &v3 << std::endl;
 
 	v3 = v1 * 2;
-	std::cout << "v1(1, 4) * 2 = " << "v3(" << v3.getOrigin().x << ", " << v3.getOrigin().y << ")" << std::endl;
+	std::cout << "v1(1, 4) * 2 = " << "v3" << &v3 << std::endl;
 
 	v1.setOrigin(2.f, 3.f);
 	v1.normalize();
-	std::cout << "v1(3, 2).normalize() = " << "(" << v1.getOrigin().x << ", " << v1.getOrigin().y << ")" << std::endl;
+	std::cout << "v1(3, 2).normalize() = " << &v1 << std::endl;
 	std::cout << "v1.getMagnitude() = " << v1.getMagnitude() << std::endl;
 }
 
@@ -121,9 +121,9 @@ void TestGame::draw() {
 	window.clear(sf::Color(255, 255, 255, 0));
 
 	window.setCam(cam);
-	//world.draw(&window);
+	world.draw(&window);
 	testText.drawText(&window);
-	button->draw();
+	//button->draw();
 
 	window.display();
 }
@@ -141,7 +141,9 @@ void TestGame::registerTiles() {
 
 void TestGame::registerMaps() {
 	world.registerTileMap(&testMap1);
-	world.registerTileMap(&testMap2);
+	//world.registerTileMap(&testMap2);
+
+	world.useMap(0);
 }
 
 void TestGame::moveCam() {

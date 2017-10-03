@@ -49,6 +49,14 @@ namespace sp {
 	void World::update(sf::Event& event){
 		currentMap.update(event);
 	}
+
+	void World::draw(Window *window) {
+		currentMap.draw(window);
+	}
+
+	void World::useMap(int i) {
+		currentMap = *mapRegistry[i];
+	}
 }
 //namespace sp {
 //	World::World() {}

@@ -1,6 +1,6 @@
 #pragma once
 #include"Point.h"
-
+#include<iostream>
 
 
 namespace sp {
@@ -14,22 +14,23 @@ namespace sp {
 		Vector(float x, float y);
 
 		void setOrigin(float x, float y);
-		Point getOrigin();
+		Point getOrigin() const;
 
-		float getMagnitude();
+		float getMagnitude() const;
 
 		void normalize();
 
 
 
 
-		Vector operator +(Vector vec);
-		Vector operator +(float factor);
+		Vector operator +(Vector vec) const;
+		Vector operator +(float factor) const;
 
-		Vector operator -(Vector vec);
-		Vector operator -(float factor);
+		Vector operator -(Vector vec) const;
+		Vector operator -(float factor) const;
 
-		Vector operator *(Vector factor);
-		Vector operator *(float factor);
+		Vector operator *(Vector factor) const;
+		Vector operator *(float factor) const;
+		//std::ostream& operator<<(std::ostream& stream, const Vector& vec) const;
 	};
 }

@@ -10,6 +10,7 @@ namespace sp{
 		int id;
 		Image texture;
 		Point pos;
+		float width, height;
 
 	public:
 		Tile(int id);
@@ -20,7 +21,15 @@ namespace sp{
 
 		void draw(Window *window);
 
+		void setPosition(float x, float y);
+		
+		float getWidth();
+		float getHeight();
+
 	private:
 		void setID(int id);
+
+	protected:
+		void setDimensions(float width, float height);
 	};
 }

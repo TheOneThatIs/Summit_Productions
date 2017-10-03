@@ -44,9 +44,6 @@ namespace sp {
 				ups = (float)updateCount;
 				updateCount = 0;
 
-				std::cout << "fps: " << fps << std::endl;
-				std::cout << "ups: " << ups << std::endl;
-
 				//reset time
 				time = 0.0;
 			}

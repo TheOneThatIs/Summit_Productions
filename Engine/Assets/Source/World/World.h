@@ -21,6 +21,8 @@ namespace sp {
 		void registerTileMap(TileMap* map);
 
 		void update(sf::Event &event);
+		void draw(Window *window);
+		void useMap(int i);
 	};
 }
 //namespace sp {
