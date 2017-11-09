@@ -3,7 +3,7 @@
 
 
 TileStone::TileStone() :
-	ITile(2, 200, sp::Image("Resources/Textures/Terrain/Stone.png", {0, 0, 25, 25}))
+	ITile(2, 200), image("Resources/Textures/Terrain/Stone.png", {0, 0, 25, 25})
 {}
 TileStone::~TileStone(){}
 
@@ -13,5 +13,9 @@ void TileStone::update() {
 }
 
 void TileStone::draw(sp::Window *window) {
-	i_image.draw(window);
+	image.draw(window);
+}
+
+void TileStone::setPosition(float x, float y) {
+	image.setPosition({ x, y });
 }

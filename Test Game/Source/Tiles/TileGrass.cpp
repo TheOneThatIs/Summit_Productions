@@ -3,7 +3,7 @@
 
 
 TileGrass::TileGrass() :
-	ITile(1, 200, sp::Image("Resources/Textures/Terrain/Grass.png", {0, 0, 25, 25}))
+	ITile(1, 200), image("Resources/Textures/Terrain/Grass.png", {0, 0, 25, 25})
 {}
 TileGrass::~TileGrass(){}
 
@@ -13,5 +13,9 @@ void TileGrass::update() {
 }
 
 void TileGrass::draw(sp::Window *window) {
-	i_image.draw(window);
+	image.draw(window);
+}
+
+void TileGrass::setPosition(float x, float y) {
+	image.setPosition({ x, y });
 }

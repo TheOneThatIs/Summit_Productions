@@ -4,8 +4,8 @@
 
 namespace sp {
 
-	ITile::ITile(int id, int durability, sp::Image image) :
-		i_ID(id), i_durability(durability), i_damage(0), i_image(image) {
+	ITile::ITile(int id, int durability) :
+		i_ID(id), i_durability(durability), i_damage(0){
 
 	}
 	ITile::~ITile() {
@@ -27,10 +27,6 @@ namespace sp {
 
 	}
 
-	void ITile::setPosition(float x, float y) {
-		i_image.setPosition( {x, y} );
-	}
-
 	int ITile::getID() {
 		return i_ID;
 	}
@@ -41,9 +37,5 @@ namespace sp {
 
 	int ITile::getDamage() {
 		return i_damage;
-	}
-
-	sp::Image ITile::getImage() {
-		return i_image;
 	}
 }

@@ -50,5 +50,4 @@ namespace sp {
 		window->draw(sprite);
 	}
 
-
 }

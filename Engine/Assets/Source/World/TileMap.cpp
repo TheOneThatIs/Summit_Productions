@@ -48,12 +48,12 @@ namespace sp {
 						tiles[row][column]->setPosition(row*tileWidth, column*tileHeight);
 
 						strNum = "";
-						column++;
+						row++;
 						continue;
 					}
 				}
-				column = 0;
-				row++;
+				row = 0;
+				column++;
 			}
 		}
 	}
