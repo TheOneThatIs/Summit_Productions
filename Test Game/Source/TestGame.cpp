@@ -45,9 +45,9 @@ TestGame::TestGame() :
 	testVectors();
 
 	map.bindTileBatch(&tileBatch);
-	map.resize(5, 5);
+	map.resize(100, 100);
 	map.setTileSize(25, 25);
-	map.load("Resources/Maps/Small World Test.csv");
+	map.load("Resources/Maps/Test World 1.csv");
 }
 
 void TestGame::testVectors() {

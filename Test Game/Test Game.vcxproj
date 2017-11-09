@@ -144,11 +144,16 @@
     <ClCompile Include="Source\Tiles\TileCobblestone.cpp" />
     <ClCompile Include="Source\Tiles\TileDirt.cpp" />
     <ClCompile Include="Source\Tiles\TileFern.cpp" />
+    <ClCompile Include="Source\Tiles\TileFlower.cpp" />
     <ClCompile Include="Source\Tiles\TileGrass.cpp" />
+    <ClCompile Include="Source\Tiles\TileLeaves.cpp" />
+    <ClCompile Include="Source\Tiles\TileShist.cpp" />
     <ClCompile Include="Source\Tiles\TileStone.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\TestGame.cpp" />
     <ClCompile Include="Source\Tiles\TileBatch.cpp" />
+    <ClCompile Include="Source\Tiles\TileTreeBase.cpp" />
+    <ClCompile Include="Source\Tiles\TileTreeTrunk.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
@@ -159,14 +164,20 @@
     <ClInclude Include="Source\Tiles\TileCobblestone.h" />
     <ClInclude Include="Source\Tiles\TileDirt.h" />
     <ClInclude Include="Source\Tiles\TileFern.h" />
+    <ClInclude Include="Source\Tiles\TileFlower.h" />
     <ClInclude Include="Source\Tiles\TileGrass.h" />
+    <ClInclude Include="Source\Tiles\TileLeaves.h" />
+    <ClInclude Include="Source\Tiles\TileShist.h" />
     <ClInclude Include="Source\Tiles\TileStone.h" />
     <ClInclude Include="Source\TestGame.h" />
     <ClInclude Include="Source\Tiles\TileBatch.h" />
+    <ClInclude Include="Source\Tiles\TileTreeBase.h" />
+    <ClInclude Include="Source\Tiles\TileTreeTrunk.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cutscenes\Intro\0000-0085.avi" />
     <None Include="Resources\Maps\Small World Test.csv" />
+    <None Include="Resources\Maps\Test Map.csv" />
     <None Include="Resources\Maps\Test World 1.csv" />
     <None Include="Resources\Saves\TestFile.sav" />
   </ItemGroup>

@@ -3,7 +3,7 @@
 
 
 TileGrass::TileGrass() :
-	ITile(1, 200), image("Resources/Textures/Terrain/Grass.png", {0, 0, 25, 25})
+	ITile(1, 200), image("Resources/Textures/Terrain/Other.png", {25, 0, 25, 25})
 {}
 TileGrass::~TileGrass(){}
 

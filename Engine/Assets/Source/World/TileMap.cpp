@@ -7,8 +7,10 @@ namespace sp {
 
 	void TileMap::draw(sp::Window *window) {
 		for (int i = 0; i < tiles.size(); i++)
-			for (int j = 0; j < tiles.size(); j++)
-				tiles[i][j]->draw(window);
+			for (int j = 0; j < tiles.size(); j++) {
+				if(tiles[i][j])
+					tiles[i][j]->draw(window);
+			}
 	}
 	void TileMap::update() {
 		
@@ -45,7 +47,8 @@ namespace sp {
 						// *** Store strNum in TileMap here ***
 
 						tiles[row][column] = tileBatch->createTile(std::stoi(strNum));
-						tiles[row][column]->setPosition(row*tileWidth, column*tileHeight);
+						if(tiles[row][column])
+							tiles[row][column]->setPosition(row*tileWidth, column*tileHeight);
 
 						strNum = "";
 						row++;

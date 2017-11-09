@@ -45,6 +45,21 @@
     <ClCompile Include="Source\Tiles\TileGrass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Tiles\TileFlower.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tiles\TileLeaves.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tiles\TileShist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tiles\TileTreeBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tiles\TileTreeTrunk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\TestGame.h">
@@ -68,12 +83,28 @@
     <ClInclude Include="Source\Tiles\TileFern.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Tiles\TileFlower.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tiles\TileLeaves.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tiles\TileShist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tiles\TileTreeBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tiles\TileTreeTrunk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Saves\TestFile.sav" />
     <None Include="Resources\Cutscenes\Intro\0000-0085.avi" />
     <None Include="Resources\Maps\Test World 1.csv" />
     <None Include="Resources\Maps\Small World Test.csv" />
+    <None Include="Resources\Maps\Test Map.csv" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Cutscenes\Intro\0.png">

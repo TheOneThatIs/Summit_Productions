@@ -23,8 +23,18 @@ sp::ITile* TileBatch::createTile(int id) {
 			return new TileCobblestone();
 		case 4:
 			return new TileFern();
+		case 5:
+			return new TileFern();
+		case 6:
+			return new TileFern();
+		case 7:
+			return new TileFern();
+		case 8:
+			return new TileFern();
+		case 9:
+			return new TileFern();
 		default:
 			std::cout << "[***ERROR***] A tile with ID " << id << " does not exist!" << std::endl;
-			//return nullptr;
+			return nullptr;
 	}
 }

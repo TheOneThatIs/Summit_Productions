@@ -3,7 +3,7 @@
 
 
 TileDirt::TileDirt() :
-	ITile(0, 25), image("Resources/Textures/Terrain/Dirt.png", { 0, 0, 25, 25 }){
+	ITile(0, 25), image("Resources/Textures/Terrain/Other.png", { 0, 0, 25, 25 }){
 }
 TileDirt::~TileDirt(){}
 
