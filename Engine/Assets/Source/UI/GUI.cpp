@@ -7,7 +7,6 @@ namespace sp {
 	GUI::GUI(sp::Window *window){}
 
 	void GUI::init(std::string filePath, sf::IntRect hitBox, sp::Point pos, sp::Window *window) {
-		std::cout << pos.x << std::endl;
 		setTexture(filePath);
 		setHitBox(hitBox);
 		setPosition(pos);

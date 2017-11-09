@@ -27,13 +27,22 @@
     <ClCompile Include="Source\TestGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Entities\Player.cpp">
+    <ClCompile Include="Source\Tiles\TileDirt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Blocks\Stone.cpp">
+    <ClCompile Include="Source\Tiles\TileStone.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Blocks\Dirt.cpp">
+    <ClCompile Include="Source\Tiles\TileBatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tiles\TileCobblestone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tiles\TileFern.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tiles\TileGrass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,13 +50,22 @@
     <ClInclude Include="Source\TestGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Entities\Player.h">
+    <ClInclude Include="Source\Tiles\TileDirt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Blocks\Stone.h">
+    <ClInclude Include="Source\Tiles\TileStone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Blocks\Dirt.h">
+    <ClInclude Include="Source\Tiles\TileBatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tiles\TileCobblestone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tiles\TileGrass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tiles\TileFern.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

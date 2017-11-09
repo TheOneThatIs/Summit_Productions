@@ -15,10 +15,8 @@
 
 
 TestGame::TestGame() :
-	testMap1(0, "Resources/Maps/Small World Test.csv"), testMap2(1, "Resources/Maps/Test World 1.csv"),
-	player(Player(0)), player2(Player(1)), player3(Player(2)),
 	cam(sf::FloatRect(0, 0, WIDTH, HEIGHT)),
-	textRotation(0), textColor(0, 0, 0, 255), textTime(0){
+	textRotation(0), textColor(0, 0, 0, 255), textTime(0) {
 
 	// WINDOW
 		window.create(TITLE, WIDTH, HEIGHT);
@@ -44,13 +42,12 @@ TestGame::TestGame() :
 		button->init("resources/textures/button.png", sf::IntRect(0, 0, 200, 50), sp::Point(100, 0), &window);
 	
 
-	//testVectors();
+	testVectors();
 
-
-	// WORLD
-		registerEntities();
-		registerTiles();
-		registerMaps();
+	map.bindTileBatch(&tileBatch);
+	map.resize(5, 5);
+	map.setTileSize(25, 25);
+	map.load("Resources/Maps/Small World Test.csv");
 }
 
 void TestGame::testVectors() {
@@ -111,39 +108,21 @@ void TestGame::update(sf::Event &event) {
 					}
 				break;
 		}
-		world.update(event);
 	}
 
 	animateText();
+	map.update();
 }
 
 void TestGame::draw() {
-	window.clear(sf::Color(255, 255, 255, 0));
+	window.clear(sf::Color(0, 0, 0, 0));
 
 	window.setCam(cam);
-	world.draw(&window);
 	testText.drawText(&window);
-	//button->draw();
+	button->draw();
+	map.draw(&window);
 
 	window.display();
-}
-
-void TestGame::registerEntities(){
-	world.registerEntity(&player);
-	world.registerEntity(&player2);
-	world.registerEntity(&player3);
-}
-
-void TestGame::registerTiles() {
-	world.registerTile(new Dirt(0));
-	world.registerTile(new Stone(1));
-}
-
-void TestGame::registerMaps() {
-	world.registerTileMap(&testMap1);
-	//world.registerTileMap(&testMap2);
-
-	world.useMap(0);
 }
 
 void TestGame::moveCam() {

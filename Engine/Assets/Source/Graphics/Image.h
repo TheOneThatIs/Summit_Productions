@@ -15,6 +15,7 @@ namespace sp {
 	public:
 		Image();
 		Image(std::string filePath, sp::Point pos);
+		Image(std::string filePath, sf::IntRect crop);
 
 		void init(std::string filePath, sp::Point pos);
 		void init(std::string filePath, sp::Point, sf::IntRect crop);

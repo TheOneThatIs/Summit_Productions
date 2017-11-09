@@ -1,27 +1,29 @@
 #pragma once
-#include"Tile.h"
 #include<vector>
-#include"..\System\Window.h"
-
+#include"ITile.h"
+#include"ITileBatch.h"
 
 namespace sp {
-	class TileMap {
-		//std::vector< std::vector<Tile*> > tiles;
-		Tile* tiles[5][5];
-		int id;
-		std::string filePath;
+	class TileMap{
+		int width, height;
+		int tileWidth, tileHeight;
+		ITileBatch* tileBatch;
+
+		std::vector< std::vector<ITile*> > tiles;
 
 	public:
-		TileMap(int id, std::string filePath);
 		TileMap();
+		~TileMap();
 
-		void draw(Window *window);
-		void update(sf::Event& event);
+		void draw(sp::Window *window);
+		void update();
 
-		bool loadMap(std::string filePath, std::vector<Tile*> &tileRegistry);
-		Tile* loadTile(int id, std::vector<Tile*> &tileRegistry);
+		void resize(int width, int height);
+		void setTileSize(int width, int height);
 
-		int getID();
-		std::string getFilePath();
+		void load(std::string filepath);
+		void save(std::string filepath);
+
+		void bindTileBatch(ITileBatch* tileBatch);
 	};
 }

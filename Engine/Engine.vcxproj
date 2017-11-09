@@ -177,10 +177,9 @@
     <ClInclude Include="Assets\Source\UI\GUI.h" />
     <ClInclude Include="Assets\Source\Util\File.h" />
     <ClInclude Include="Assets\Source\Util\Save.h" />
-    <ClInclude Include="Assets\Source\World\Tile.h" />
-    <ClInclude Include="Assets\Source\World\Entity.h" />
+    <ClInclude Include="Assets\Source\World\ITile.h" />
+    <ClInclude Include="Assets\Source\World\ITileBatch.h" />
     <ClInclude Include="Assets\Source\World\TileMap.h" />
-    <ClInclude Include="Assets\Source\World\World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assets\Source\AI\AI.cpp" />
@@ -197,10 +196,8 @@
     <ClCompile Include="Assets\Source\UI\GUI.cpp" />
     <ClCompile Include="Assets\Source\Util\File.cpp" />
     <ClCompile Include="Assets\Source\Util\Save.cpp" />
-    <ClCompile Include="Assets\Source\World\Tile.cpp" />
-    <ClCompile Include="Assets\Source\World\Entity.cpp" />
+    <ClCompile Include="Assets\Source\World\ITile.cpp" />
     <ClCompile Include="Assets\Source\World\TileMap.cpp" />
-    <ClCompile Include="Assets\Source\World\World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

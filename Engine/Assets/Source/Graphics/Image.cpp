@@ -11,6 +11,13 @@ namespace sp {
 		sprite.setTexture(texture);
 		setPosition(pos);
 	}
+	Image::Image(std::string filePath, sf::IntRect crop) {
+		if (!texture.loadFromFile(filePath))
+			std::cout << "Error loading file \"" << filePath << "\"" << std::endl;
+		sprite.setTexture(texture);
+		sprite.setTextureRect(crop);
+		setPosition(pos);
+	}
 
 
 	void Image::init(std::string filePath, sp::Point pos) {
@@ -21,7 +28,8 @@ namespace sp {
 	}
 
 	void Image::init(std::string filePath, sp::Point pos, sf::IntRect crop) {
-		texture.loadFromFile(filePath);
+		if (!texture.loadFromFile(filePath))
+			std::cout << "Error loading file \"" << filePath << "\"" << std::endl;
 		sprite.setTexture(texture);
 		sprite.setTextureRect(crop);
 		setPosition(pos);
