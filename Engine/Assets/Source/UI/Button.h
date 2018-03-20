@@ -8,22 +8,6 @@
 
 
 
-namespace sp {
-	class Button : public GUI {
-	public:
-		enum ButtonState {
-			NORMAL, HOVER, CLICKED
-		}state;
-
-		Button();
-	};
-}
-
-
-
-
-
-
 /*namespace sp {
 	class Button : public UI {
 		enum ButtonState{

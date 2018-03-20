@@ -8,8 +8,9 @@
 
 #include<Engine\Assets\Source\World\TileMap.h>
 
-#include"Tiles\TileBatch.h"
+#include<Engine\Assets\Source\Graphics\Animation.h>
 
+#include<Engine\Assets\Source\Graphics\Renderer.h>
 
 
 class TestGame : public sp::GameCore {
@@ -32,18 +33,33 @@ class TestGame : public sp::GameCore {
 
 
 	// BUTTON
-	sp::GUI *button;
+	//sp::GUI *button;
 
 	sp::TileMap map;
-	TileBatch tileBatch;
+
+	sp::Animation anim;
+	sp::Renderer renderer;
+
+	sp::Image texture1;
+	sp::Image texture2;
+	sp::Image texture3;
+	sp::Image texture4;
+	sp::Image texture5;
+	sp::Image texture6;
+
+	sp::RenderLayer renderLayer;
 
 public:
 	TestGame();
 
 private:
+	void initTextures();
+
 	void testVectors();
 	void update(sf::Event &event) override;
 	void draw() override;
+
+	void deleteTextures();
 
 	void moveCam();
 	void animateText();

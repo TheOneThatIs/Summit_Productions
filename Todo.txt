@@ -4,3 +4,9 @@
 	Class Button
 		-implement button rotation
 		-implement button states
+
+	Class Animation
+		-Rework
+
+	Renderer
+		-Sprite Batch

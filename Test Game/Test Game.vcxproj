@@ -141,19 +141,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Tiles\TileCobblestone.cpp" />
-    <ClCompile Include="Source\Tiles\TileDirt.cpp" />
-    <ClCompile Include="Source\Tiles\TileFern.cpp" />
-    <ClCompile Include="Source\Tiles\TileFlower.cpp" />
-    <ClCompile Include="Source\Tiles\TileGrass.cpp" />
-    <ClCompile Include="Source\Tiles\TileLeaves.cpp" />
-    <ClCompile Include="Source\Tiles\TileShist.cpp" />
-    <ClCompile Include="Source\Tiles\TileStone.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\TestGame.cpp" />
-    <ClCompile Include="Source\Tiles\TileBatch.cpp" />
-    <ClCompile Include="Source\Tiles\TileTreeBase.cpp" />
-    <ClCompile Include="Source\Tiles\TileTreeTrunk.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
@@ -161,18 +150,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Tiles\TileCobblestone.h" />
-    <ClInclude Include="Source\Tiles\TileDirt.h" />
-    <ClInclude Include="Source\Tiles\TileFern.h" />
-    <ClInclude Include="Source\Tiles\TileFlower.h" />
-    <ClInclude Include="Source\Tiles\TileGrass.h" />
-    <ClInclude Include="Source\Tiles\TileLeaves.h" />
-    <ClInclude Include="Source\Tiles\TileShist.h" />
-    <ClInclude Include="Source\Tiles\TileStone.h" />
     <ClInclude Include="Source\TestGame.h" />
-    <ClInclude Include="Source\Tiles\TileBatch.h" />
-    <ClInclude Include="Source\Tiles\TileTreeBase.h" />
-    <ClInclude Include="Source\Tiles\TileTreeTrunk.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cutscenes\Intro\0000-0085.avi" />
@@ -282,7 +260,6 @@
     <Image Include="Resources\Cutscenes\Intro\97.png" />
     <Image Include="Resources\Cutscenes\Intro\98.png" />
     <Image Include="Resources\Cutscenes\Intro\99.png" />
-    <Image Include="Resources\Textures\Background.png" />
     <Image Include="Resources\Textures\Blocks\Dirt.png" />
     <Image Include="Resources\Textures\Blocks\Fern.png" />
     <Image Include="Resources\Textures\Blocks\Flower.png" />
@@ -294,6 +271,11 @@
     <Image Include="Resources\Textures\Button.png" />
     <Image Include="Resources\Textures\Player.png" />
     <Image Include="Resources\Textures\Sprite Sheet.png" />
+    <Image Include="Resources\Textures\Test Background.jpg" />
+    <Image Include="Resources\Textures\Test Sprite 1.png" />
+    <Image Include="Resources\Textures\Test Sprite 2.png" />
+    <Image Include="Resources\Textures\Test Sprite 3 (2).png" />
+    <Image Include="Resources\Textures\Test Sprite 3.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Fonts\Arial\Arial Bold-Italic.ttf" />

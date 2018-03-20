@@ -3,6 +3,7 @@
 #include<iostream>
 #include<string>
 #include<SFML\Graphics.hpp>
+#include"Image.h"
 
 
 namespace sp {
@@ -20,6 +21,19 @@ namespace sp {
 
 		Animation(std::string filepath, sf::IntRect srcRect, int pollFrequency, int numFrames) : currentTime(0), isLooped(false), isAnimationFinished(false) {
 			//spritesheet = spriteManager.createSprite(filepath);
+
+			this->pollFrequency = pollFrequency;
+			interval = srcRect.width;
+			this->srcRect = srcRect;
+			this->numFrames = numFrames;
+		}
+
+		void init(std::string filepath, sf::IntRect srcRect, int pollFrequency, int numFrames) {
+			currentTime = 0;
+			isLooped = true;
+			isAnimationFinished = false;
+
+			//spritesheet = sp::Image::createSprite(filepath);
 
 			this->pollFrequency = pollFrequency;
 			interval = srcRect.width;

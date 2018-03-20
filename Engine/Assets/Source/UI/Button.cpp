@@ -3,13 +3,6 @@
 #include<iostream>
 
 
-namespace sp {
-	Button::Button() {}
-}
-
-
-
-
 /*namespace sp {
 	Button::Button() {
 		currentStateImage = &normal;

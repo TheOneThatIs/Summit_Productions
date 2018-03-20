@@ -20,8 +20,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lost Legacy", "Lost Legacy\
 		{D44205C7-2C21-4B54-B571-B92AF095094B} = {D44205C7-2C21-4B54-B571-B92AF095094B}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{3DDF6274-7647-4613-AFFA-0AA619762189}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -62,14 +60,6 @@ Global
 		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Release|x64.Build.0 = Release|x64
 		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Release|x86.ActiveCfg = Release|Win32
 		{A69355C6-0C9A-4E42-8317-DE2A326F702D}.Release|x86.Build.0 = Release|Win32
-		{3DDF6274-7647-4613-AFFA-0AA619762189}.Debug|x64.ActiveCfg = Debug|x64
-		{3DDF6274-7647-4613-AFFA-0AA619762189}.Debug|x64.Build.0 = Debug|x64
-		{3DDF6274-7647-4613-AFFA-0AA619762189}.Debug|x86.ActiveCfg = Debug|Win32
-		{3DDF6274-7647-4613-AFFA-0AA619762189}.Debug|x86.Build.0 = Debug|Win32
-		{3DDF6274-7647-4613-AFFA-0AA619762189}.Release|x64.ActiveCfg = Release|x64
-		{3DDF6274-7647-4613-AFFA-0AA619762189}.Release|x64.Build.0 = Release|x64
-		{3DDF6274-7647-4613-AFFA-0AA619762189}.Release|x86.ActiveCfg = Release|Win32
-		{3DDF6274-7647-4613-AFFA-0AA619762189}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

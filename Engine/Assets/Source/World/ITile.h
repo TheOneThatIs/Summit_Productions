@@ -1,5 +1,6 @@
 #pragma once
 #include"..\Graphics\Image.h"
+#include"..\System\Window.h"
 
 
 namespace sp {
