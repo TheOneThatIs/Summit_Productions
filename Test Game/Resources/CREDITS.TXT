@@ -1,0 +1,107 @@
+﻿Title:
+    Heroic Demise [Updated Version]
+
+Author:
+    Matthew Pablo
+
+URL:
+    https://opengameart.org/content/heroic-demise-updated-version
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+File(s):
+    * Heroic Demise (New).mp3
+
+----------------------------------------
+
+Title:
+    Soliloquy
+
+Author:
+    Matthew Pablo
+
+URL:
+    https://opengameart.org/content/soliloquy
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+File(s):
+    * Soliloquy.mp3
+
+----------------------------------------
+
+Title:
+    The Dark Amulet - Dark Mage Theme
+
+Author:
+    Matthew Pablo
+
+URL:
+    https://opengameart.org/content/the-dark-amulet-dark-mage-theme
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+File(s):
+    * The Dark Amulet.mp3
+
+----------------------------------------
+
+Title:
+    Magical Theme
+
+Author:
+    remaxim
+
+URL:
+    https://opengameart.org/content/magical-theme
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+File(s):
+    * magical_theme.flac
+
+----------------------------------------
+
+Title:
+    The King's Crowning
+
+Author:
+    Telaron
+
+URL:
+    https://opengameart.org/content/the-kings-crowning
+
+License(s):
+    * GPL 2.0 ( http://www.gnu.org/licenses/old-licenses/gpl-2.0.html )
+    * GPL 3.0 ( http://www.gnu.org/licenses/gpl-3.0.html )
+    * CC-BY-SA 3.0 ( http://creativecommons.org/licenses/by-sa/3.0/legalcode )
+
+File(s):
+    * the_kings_crowning_v1.mp3
+
+----------------------------------------
+
+Title:
+    Prologue
+
+Author:
+    Telaron
+
+URL:
+    https://opengameart.org/content/prologue
+
+License(s):
+    * GPL 2.0 ( http://www.gnu.org/licenses/old-licenses/gpl-2.0.html )
+    * GPL 3.0 ( http://www.gnu.org/licenses/gpl-3.0.html )
+    * CC-BY-SA 3.0 ( http://creativecommons.org/licenses/by-sa/3.0/legalcode )
+
+File(s):
+    * prologue.mp3
+
+----------------------------------------
+
+

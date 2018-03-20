@@ -1,16 +1,19 @@
 #pragma once
-
+/*
 #include<SFML\Graphics.hpp>
 #include"..\Graphics\Image.h"
 #include"..\Math\Point.h"
+#include"..\Graphics\Renderer.h"
+#include"..\System\Window.h"
 
 namespace sp {
 	class GUI {
 	protected:
 		sp::Window *windowPtr;
-		Image image;
+		sp::Image image;
 		sp::Point pos;
 		sf::IntRect hitBox;
+		sp::RenderLayer renderLayer;
 
 	public:
 		GUI();
@@ -24,7 +27,6 @@ namespace sp {
 		sp::Point getPosition();
 
 		void setTexture(Image image);
-		void setTexture(std::string filePath);
 
 		void setHitBox(sf::IntRect hitBox);
 		bool update(sp::Point mousePos);
@@ -34,3 +36,4 @@ namespace sp {
 	};
 
 }
+*/
