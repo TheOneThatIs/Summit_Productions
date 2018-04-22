@@ -14,6 +14,7 @@ class Window {
 public:
 	Window();
 	Window(std::string name, int width, int height);
+	
 
 
 	void create(std::string name, int width, int height);

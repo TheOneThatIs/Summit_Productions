@@ -72,18 +72,24 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(SolutionDir);$(SolutionDir)Libraries\include;$(SolutionDir)Lost Legacy\Source;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Debug\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration)\x32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir);$(SolutionDir)Libraries\include;$(SolutionDir)Lost Legacy\Source;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Debug\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration)\x32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir);$(SolutionDir)Libraries\include;$(SolutionDir)Lost Legacy\Source;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Debug\;$(LibraryPath)</LibraryPath>
+    <IntDir>$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\x64\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(SolutionDir);$(SolutionDir)Libraries\include;$(SolutionDir)Lost Legacy\Source;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Debug\;$(LibraryPath)</LibraryPath>
+    <IntDir>$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\x64\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

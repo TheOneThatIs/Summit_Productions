@@ -17,6 +17,7 @@ namespace sp {
 	public:
 		Image();
 		~Image();
+		Image& operator=(const Image& other);
 
 		void init(std::shared_ptr<sf::Texture> pTexture);
 		void setUVs(int x, int y, int w, int h);
