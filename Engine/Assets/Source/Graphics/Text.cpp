@@ -1,5 +1,5 @@
 #include"Text.h"
-
+/*
 namespace sp {
 	Text::Text(){}
 	Text::Text(string text, string fontName) {
@@ -48,3 +48,5 @@ namespace sp {
 			text.setOrigin(sf::Vector2f(text.getLocalBounds().width/2, text.getLocalBounds().height / 2));
 	}
 }
+
+*/

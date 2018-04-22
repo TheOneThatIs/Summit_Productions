@@ -1,3 +1,4 @@
+/*
 #pragma once
 
 #include<string>
@@ -38,3 +39,4 @@ namespace sp {
 	};
 
 }
+*/
