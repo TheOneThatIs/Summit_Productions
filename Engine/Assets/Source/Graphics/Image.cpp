@@ -17,6 +17,12 @@ namespace sp {
 		std::cout << "Destroying image..." << std::endl;
 	}
 
+	Image& Image::operator=(const Image& other) {
+		return *this;
+	}
+
+
+
 	void Image::init(std::shared_ptr<sf::Texture> pTexture) {
 		if (pTexture == nullptr)
 			std::cout << "Could not load texture" << std::endl;

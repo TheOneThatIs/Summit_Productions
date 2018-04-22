@@ -22,11 +22,11 @@ class TestGame : public sp::GameCore {
 
 
 	// TEST TEXT
-	sp::Text testText;
-	float textRotation;
-	sf::Color textColor;
-	float textTime;
-	bool textTimeUp;
+	//sp::Text testText;
+	//float textRotation;
+	//sf::Color textColor;
+	//float textTime;
+	//bool textTimeUp;
 
 	// TEST FILE
 	sp::Save playerSave;
@@ -62,5 +62,5 @@ private:
 	void deleteTextures();
 
 	void moveCam();
-	void animateText();
+	//void animateText();
 };

@@ -17,8 +17,7 @@
 
 TestGame::TestGame() :
 	renderLayer(&window),
-	cam(sf::FloatRect(0, 0, WIDTH, HEIGHT)),
-	textRotation(0), textColor(0, 0, 0, 255), textTime(0)
+	cam(sf::FloatRect(0, 0, WIDTH, HEIGHT))
 	{
 
 	// WINDOW
@@ -29,8 +28,8 @@ TestGame::TestGame() :
 
 
 	// TEST TEXT
-		testText.init("Hello world!", "Resources/Fonts/Arial/Arial.ttf", 50, sf::Color::White, 200.0f, 200.0f);
-		testText.setOrigin(sp::Text::MIDDLE);
+		//testText.init("Hello world!", "Resources/Fonts/Arial/Arial.ttf", 50, sf::Color::White, 200.0f, 200.0f);
+		//testText.setOrigin(sp::Text::MIDDLE);
 
 
 	// TEST SAVE
@@ -146,7 +145,7 @@ void TestGame::update(sf::Event &event) {
 		}
 	}
 
-	animateText();
+	//animateText();
 	//map.update();
 }
 void TestGame::deleteTextures() {
@@ -178,6 +177,7 @@ void TestGame::moveCam() {
 	//cam.move(player->getPos());
 }
 
+/*
 void TestGame::animateText() {
 	if (textRotation < 360)
 		textRotation++;
@@ -196,3 +196,4 @@ void TestGame::animateText() {
 	
 	textTime -= .05f;
 }
+*/
