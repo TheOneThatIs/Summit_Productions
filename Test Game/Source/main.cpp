@@ -8,4 +8,4 @@ int main(int argc, char** argv) {
 	game.gameLoop(event, 60);
 
 	return 0;
-}
+}//
