@@ -7,6 +7,7 @@ namespace sp {
 	Window::Window(std::string name, int width, int height) {
 		renderWindow.create(sf::VideoMode(width, height), name);
 	}
+	Window::~Window(){}
 
 
 	void Window::create(std::string name, int width, int height) {
