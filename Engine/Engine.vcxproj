@@ -71,24 +71,24 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Libraries\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Engine\Assets\Source\;$(SolutionDir)Libraries\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\libs\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Libraries\libs\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Libraries\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Engine\Assets\Source\;$(SolutionDir)Libraries\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\libs\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Libraries\libs\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)$(Configuration)\x64\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Libraries\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)$(Configuration)</OutDir>
+    <IncludePath>$(SolutionDir)Engine\Assets\Source\;$(SolutionDir)Libraries\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\libs\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)Libraries\libs\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)$(Configuration)\x64\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Libraries\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)$(Configuration)</OutDir>
+    <IncludePath>$(SolutionDir)Engine\Assets\Source\;$(SolutionDir)Libraries\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\libs\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)Libraries\libs\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -102,7 +102,8 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <Lib>
-      <AdditionalDependencies>x32-sfml-system-d-2.lib;x32-sfml-window-d-2.lib;x32-sfml-graphics-d-2.lib;x32-sfml-audio-d-2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>x32-sfml-system-d.lib;x32-sfml-window-d.lib;x32-sfml-graphics-d.lib;x32-sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)_x32$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -118,6 +119,7 @@
     </Link>
     <Lib>
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)_x64$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -136,7 +138,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>x32-sfml-system-d-2.lib;x32-sfml-window-d-2.lib;x32-sfml-graphics-d-2.lib;x32-sfml-audio-d-2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>x32-sfml-system-d.lib;x32-sfml-window-d.lib;x32-sfml-graphics-d.lib;x32-sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)_x32$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -156,6 +159,7 @@
     </Link>
     <Lib>
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)_x64$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
